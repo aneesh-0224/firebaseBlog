@@ -31,9 +31,10 @@ function Navbar() {
     <div style={{backgroundColor:"rgb(80,40,80)"}}>
       <ul style={{listStyle:"none",display:"flex",justifyContent:"center",margin:"0px",padding:"10px"}}>
         <Link to='/' style={link_style}>Home</Link>
-        <Link to='/createPost' style={link_style}>Create Post</Link>
         {!isAuth&&<Link to='/login' style={link_style}>Login</Link>}
-        {isAuth&&<div style={link_style} onClick={logout}>Logout</div>}
+        {isAuth&&
+        (<><Link to='/createPost' style={link_style}>Create Post</Link>
+        <div style={link_style} onClick={logout}>Logout</div></>)}
       </ul>
     </div>
   )
